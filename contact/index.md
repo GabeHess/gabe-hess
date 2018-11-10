@@ -56,7 +56,7 @@ input[type=submit]:active {
 <body>
 
 <div class="container">
-  <form action="../message-sent/" name="contact" method="GET" netlify>
+  <form action="{{ site.url }}/message-sent/" name="contact" method="GET" netlify>
     <div class="row">
       <div>
         <input type="text" id="fname" name="First Name" placeholder="First Name">
