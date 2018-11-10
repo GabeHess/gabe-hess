@@ -63,7 +63,7 @@ email: gabehess@tutanota.com
 #hackernews:        username
 partner1: https://assortedscraps.com
 partner2: https://www.pursuitoft.com
-rss: {{ sit.url }}/feed.xml
+rss: /feed.xml
 
 
 # Gems
