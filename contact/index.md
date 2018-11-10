@@ -56,25 +56,25 @@ input[type=submit]:active {
 <body>
 
 <div class="container">
-  <form name="contact" method="POST" netlify>
+  <form action="../message-sent/" name="contact" method="GET" netlify>
     <div class="row">
       <div>
-        <input type="text" id="fname" name="firstname" placeholder="First Name">
+        <input type="text" id="fname" name="First Name" placeholder="First Name">
       </div>
     </div>
     <div class="row">
       <div>
-        <input type="text" id="lname" name="lastname" placeholder="Last Name">
+        <input type="text" id="lname" name="Last Name" placeholder="Last Name">
       </div>
     </div>
     <div class="row">
       <div>
-        <input type="text" id="email" name="email" placeholder="Email">
+        <input type="text" id="email" name="Email" placeholder="Email">
       </div>
     </div>
     <div class="row">
       <div>
-        <textarea id="subject" name="subject" placeholder="Message" style="height:200px"></textarea>
+        <textarea id="subject" name="Message" placeholder="Message" style="height:200px"></textarea>
       </div>
     </div>
     <div class="row">
