@@ -56,7 +56,7 @@ input[type=submit]:active {
 <body>
 
 <div class="container">
-  <form action="https://formcarry.com/s/5mkmYOhRZiG" method="POST" accept-charset="UTF-8">
+  <form name="contact" method="POST" netlify>
     <div class="row">
       <div>
         <input type="text" id="fname" name="firstname" placeholder="First Name">

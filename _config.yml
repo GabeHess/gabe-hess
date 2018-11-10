@@ -8,7 +8,7 @@ logo:               'assets/img/logo.png'
 background:         'assets/img/placeholder-big.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
-url:                localhost:4000
+url:                gabehess.netlify.com
 
 # Jekyll
 permalink:          /:title/
@@ -63,7 +63,7 @@ email: gabehess@tutanota.com
 #hackernews:        username
 partner1: https://assortedscraps.com
 partner2: https://www.pursuitoft.com
-rss: localhost:4000/feed.xml
+rss: gabehess.netlify.com/feed.xml
 
 
 # Gems
