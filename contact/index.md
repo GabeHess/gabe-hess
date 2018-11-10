@@ -56,7 +56,7 @@ input[type=submit]:active {
 <body>
 
 <div class="container">
-  <form action="{{ site.url }}/message-sent/" name="contact" netlify>
+  <form action="/message-sent" name="contact" method="POST" netlify>
     <div class="row">
       <div>
         <input type="text" id="fname" name="First Name" placeholder="First Name">
@@ -80,7 +80,6 @@ input[type=submit]:active {
     <div class="row">
       <input type="submit" value="Submit">
     </div>
-    <input type="hidden" name="_gotcha"><!-- use this to prevent spam -->
   </form>
 </div>
 
