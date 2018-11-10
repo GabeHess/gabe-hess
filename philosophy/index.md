@@ -1,5 +1,5 @@
 ---
 layout: page
 title: My Philosophy
-comments: true
+comments: false
 ---
