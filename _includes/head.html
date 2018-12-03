@@ -1,58 +1,43 @@
-    <meta charset="UTF-8">
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-    <title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    {% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
-    <!-- Twitter Cards -->
-    {% if page.feature %}{% capture feature %}{{ page.feature }}{% endcapture %}{% unless feature contains 'http://' or feature contains 'https://' %}{% capture feature %}{{ site.url }}/{{ feature }}{% endcapture %}{% endunless %}
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="{{ feature }}">
-    {% else %}<meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="{{ site.url }}/{{ site.logo }}">{% endif %}
-    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-    {% if page.excerpt %}<meta name="twitter:description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if site.twitter %}<meta name="twitter:site" content="@{{ site.twitter }}">
-    <meta name="twitter:creator" content="@{{ site.twitter }}">{% endif %}
-    <!-- Open Graph -->
-    <meta property="og:locale" content="{{ site.locale }}">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-    {% if page.excerpt %}<meta property="og:description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
-    <meta property="og:site_name" content="{{ site.title }}">
-    <meta property="og:image" content="{{ site.url }}/{{ site.logo }}">
-    {% if site.google.verify %}
-    <!-- Webmaster Tools verfication -->
-    <meta name="google-site-verification" content="{{ site.google.verify }}">{% endif %}
-    {% if site.bing-verify %}    <meta name="msvalidate.01" content="{{ site.bing-verify }}">{% endif %}
-    {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
-    <link rel="canonical" href="{{ canonical }}">
-    <link href="{{ site.url }}/feed.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
-    <!-- Handheld -->
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css">
-    <!-- JS -->
-    <script src="{{ site.url }}/assets/js/modernizr-3.3.1.custom.min.js"></script>
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="{{ site.url }}/assets/img/favicons/apple-icon-precomposed.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ site.url }}/assets/img/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ site.url }}/assets/img/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ site.url }}/assets/img/favicons/apple-icon-144x144.png">
-    <link rel="shortcut icon" type="image/png" href="{{ site.url }}/favicon.png" />
-    <link rel="shortcut icon" href="{{ site.url }}/favicon.ico" />
-    <!-- Background Image -->
-    {% if site.background %}
-    {% capture background %}{{ site.background }}{% endcapture %}
-    {% unless background contains 'http://' or background contains 'https://' %}{% capture background %}{{ site.url }}/{{ background }}{% endcapture %}{% endunless %}
-    <style type="text/css">body {background-image:url({{ background }}); {% unless site.tiled_bg %} background-repeat: no-repeat; background-size: cover; {% endunless %}}</style>
-    {% endif %}
-    <!-- Post Feature Image -->
-    {% if page.feature %}
-    {% capture feature %}{{ page.feature }}{% endcapture %}
-    {% unless feature contains 'http://' or feature contains 'https://' %}{% capture feature %}{{ site.url }}/{{ feature }}{% endcapture %}{% endunless %}
-    <style type="text/css">.feature {background-image:url({{ feature }});}</style>
-    {% endif %}
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if site.compass.author %}{{ site.compass.author }} &#8226; {% endif %}{{ site.compass.tagline | strip_html }}</title>
+
+  <link rel="apple-touch-icon" href="{{ site.baseurl }}{{ site.compass.logo }}"/>
+  <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="{{ site.url }}{{ site.baseurl }}/favicon.ico" />
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/normalize.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+
+  <meta name="author" content="{{ site.compass.author }}">
+  <meta name="description" content="{{ site.compass.tagline }}"/>
+
+  <!-- Open Graph tags -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="{{ site.compass.tagline }}"/>
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}"/>
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ site.compass.logo }}"/>
+  <meta property="og:description" content="{{ site.compass.description }}"/>
+  <meta property="og:site_name" content="{{ site.compass.tagline }}">
+
+  <!-- Twitter Card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ site.compass.tagline }}">
+  {% if site.twitter.site %}
+  <meta name="twitter:site" content="{{ site.twitter.site }}">
+  {% endif %}
+  {% if site.twitter.creator %}
+  <meta name="twitter:creator" content="{{ site.twitter.creator }}">
+  {% endif %}
+  <meta name="twitter:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <meta name="twitter:description" content="{{ site.compass.description }}">
+  <meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}{{ site.compass.logo }}">
+
+  {% if site.compass.include_analytics %}
+  {% include analytics.html %}
+  {% endif %}
+</head>
