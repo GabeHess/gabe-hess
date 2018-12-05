@@ -40,6 +40,16 @@ a:hover {
 	font-weight: bold;
 	font-size: 1.2em;
 	margin: 0.8em 0;
+
+  a {
+    display:  flex;
+  }
+
+  img {
+    height: 1.2em;
+    width: 1.2em;
+  }
+
 }
 
 /* override the left margin added by font awesome for the main content list,
