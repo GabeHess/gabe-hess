@@ -9,6 +9,8 @@ body {
 	font-family: 'Vollkorn', serif;
 	color: $text-color;
 	background-image: url(/images/background.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 header,
