@@ -21,6 +21,9 @@ main {
 /*** wrapper div for both header and main ***/
 .wrapper {
 	margin-top: 10%;
+  background-color: $background-color;
+  padding: 10px;
+  border-radius: 20px;
 }
 
 /*** anchor tags ***/
