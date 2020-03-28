@@ -9,7 +9,7 @@ compass:
   # author will appear under the avatar (optional)
   author: "Gabe Hess"
   # tagline will appear under the title (optional)
-  tagline: "<em>“He that has built for use till use is supplied, must begin to build for vanity.” - </em>Samuel Johnson"
+  tagline: "“We have now sunk to a depth at which restatement of the obvious is the first duty of intelligent men.” - <em>George Orwell</em>"
   # if include_content is true, the contents of the content.html include will be
   # added right above the generated item list, if present
   include_content: true
